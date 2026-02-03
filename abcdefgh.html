@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSS 55555 Military-Grade Testing | ITC India</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;400;600;700&display=swap');
+
+        :root {
+            --military-gold: #D4AF37;
+            --deep-slate: #1A1F25;
+            --tactical-blue: #2C3E50;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f1216;
+            color: #e2e8f0;
+            overflow-x: hidden;
+        }
+
+        .heading-font {
+            font-family: 'Orbitron', sans-serif;
+            letter-spacing: 1px;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .glass-card:hover {
+            border-color: var(--military-gold);
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .hero-gradient {
+            background: linear-gradient(135deg, #1A1F25 0%, #0f1216 100%);
+            position: relative;
+        }
+
+        .hero-gradient::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://www.transparenttextures.com/patterns/carbon-fibre.png');
+            opacity: 0.2;
+            pointer-events: none;
+        }
+
+        .btn-primary {
+            background: linear-gradient(90deg, #D4AF37, #B8860B);
+            color: #000;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-primary:hover {
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+            transform: scale(1.05);
+        }
+
+        .btn-primary:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .section-title {
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60%;
+            height: 4px;
+            background: var(--military-gold);
+        }
+
+        .test-grid-icon {
+            font-size: 2.5rem;
+            color: var(--military-gold);
+            margin-bottom: 1rem;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .process-step {
+            position: relative;
+        }
+
+        .process-step:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            top: 2rem;
+            left: 50%;
+            width: 100%;
+            height: 2px;
+            background: rgba(212, 175, 55, 0.2);
+            z-index: -1;
+        }
+
+        .site-logo {
+            height: 75px;
+            width: auto;
+            filter: brightness(1.1);
+        }
+      /* WhatsApp Float Styling */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 99;
+            background-color: var(--whatsapp-green);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 15px 30px rgba(37, 211, 102, 0.5);
+        }
+        .wa-notify {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 18px;
+            height: 18px;
+            background: #ef4444;
+            border: 2px solid white;
+            border-radius: 50%;
+            animation: wa-pulse 1.5s infinite;
+        }
+
+        @media (max-width: 768px) {
+            .process-step:not(:last-child)::after {
+                display: none;
+            }
+            .site-logo {
+                height: 35px;
+            }
+        }
+   @media (max-width: 640px) {
+            .whatsapp-float {
+                bottom: 20px;
+                right: 20px;
+                width: 50px;
+                height: 50px;
+            }
+        }
+    </style>
+</head>
+<body>
+   <a href="https://api.whatsapp.com/send/?phone=919056544487&text&type=phone_number&app_absent=0" target="_blank" class="whatsapp-float" aria-label="Contact us on WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
+        </svg>
+        <span class="wa-notify"></span>
+    </a>
+
+    <!-- Header/Nav -->
+    <nav class="fixed w-full z-50 bg-[#0f1216]/90 backdrop-blur-md border-b border-white/10 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center">
+                <a href="/">
+                    <img src="https://yourimageshare.com/ib/obzGyTxieR.png" alt="ITC India Logo" class="site-logo">
+                </a>
+            </div>
+            <div class="hidden md:flex space-x-8 text-sm font-semibold uppercase tracking-widest">
+                <a href="#about" class="hover:text-[#D4AF37] transition">Standard</a>
+                <a href="#tests" class="hover:text-[#D4AF37] transition">Tests</a>
+                <a href="#benefits" class="hover:text-[#D4AF37] transition">Benefits</a>
+                <a href="#faq" class="hover:text-[#D4AF37] transition">FAQ</a>
+            </div>
+            <a href="#contact" class="btn-primary px-6 py-2 rounded text-xs">Get Quote</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient min-h-screen flex items-center pt-20 px-6">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <span class="inline-block px-3 py-1 bg-[#D4AF37]/20 text-[#D4AF37] border border-[#D4AF37]/30 rounded text-xs font-bold uppercase mb-4">Defense & Aerospace Grade</span>
+                <h1 class="heading-font text-4xl md:text-6xl font-bold leading-tight mb-6">
+                    Military-Grade <br>
+                    <span class="text-[#D4AF37]">JSS 55555</span> Testing
+                </h1>
+                <p class="text-lg text-gray-400 mb-8 max-w-lg">
+                    Commonly known as "Penta-Five", ensure your electronics are mold-resistant, reliable, and compliant with global military standards.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#contact" class="btn-primary px-8 py-4 rounded text-center">Request Free Quote Today</a>
+                    <div class="flex items-center space-x-3 px-6 py-4 border border-white/10 rounded glass-card">
+                        <i class="fas fa-shield-alt text-[#D4AF37]"></i>
+                        <span class="text-sm font-semibold">ISO/IEC Compliant</span>
+                    </div>
+                </div>
+            </div>
+            <div class="relative hidden md:block">
+                <div class="absolute -inset-4 bg-[#D4AF37]/10 blur-3xl rounded-full"></div>
+                <div class="relative glass-card p-4 rounded-xl border-white/20">
+                    <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=1000" alt="Testing Lab" class="rounded-lg grayscale hover:grayscale-0 transition duration-500 shadow-2xl">
+                    <div class="absolute -bottom-6 -left-6 bg-[#D4AF37] p-6 rounded shadow-xl text-black">
+                        <p class="font-bold text-3xl">Penta-5</p>
+                        <p class="text-xs uppercase font-bold tracking-widest opacity-80">Certified Quality</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Overview Section -->
+    <section id="about" class="py-24 px-6 bg-[#161b22]">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="section-title heading-font text-3xl font-bold mb-8 uppercase">What is JSS 55555?</h2>
+                    <p class="text-gray-400 mb-6 leading-relaxed text-lg">
+                        JSS 55555 is a leading environmental standard for testing the resistance of electronic and electrical equipment against mold growth and extreme environmental conditions. 
+                    </p>
+                    <p class="text-gray-400 mb-8 leading-relaxed">
+                        It is widely used in military, defense, and aerospace electronics to ensure survival in the harshest environments on Earth.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="p-4 bg-white/5 rounded border-l-4 border-[#D4AF37]">
+                            <h4 class="font-bold text-white mb-1">Mold Resistance</h4>
+                            <p class="text-xs text-gray-400">Penta-Five specialized antifungal validation.</p>
+                        </div>
+                        <div class="p-4 bg-white/5 rounded border-l-4 border-[#D4AF37]">
+                            <h4 class="font-bold text-white mb-1">Defense Ready</h4>
+                            <p class="text-xs text-gray-400">Required for most Indian military contracts.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="glass-card p-6 rounded-lg text-center">
+                        <i class="fas fa-sun test-grid-icon"></i>
+                        <h3 class="font-bold mb-2">Dry Heat</h3>
+                        <p class="text-xs text-gray-500">Tropical & desert endurance.</p>
+                    </div>
+                    <div class="glass-card p-6 rounded-lg text-center">
+                        <i class="fas fa-snowflake test-grid-icon"></i>
+                        <h3 class="font-bold mb-2">Cold Operation</h3>
+                        <p class="text-xs text-gray-500">Sub-zero & polar testing.</p>
+                    </div>
+                    <div class="glass-card p-6 rounded-lg text-center">
+                        <i class="fas fa-tint test-grid-icon"></i>
+                        <h3 class="font-bold mb-2">Damp Heat</h3>
+                        <p class="text-xs text-gray-500">Humidity & moisture resistance.</p>
+                    </div>
+                    <div class="glass-card p-6 rounded-lg text-center">
+                        <i class="fas fa-wind test-grid-icon"></i>
+                        <h3 class="font-bold mb-2">Dust & Sand</h3>
+                        <p class="text-xs text-gray-500">Seal integrity validation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Tests -->
+    <section id="tests" class="py-24 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="heading-font text-4xl font-bold mb-4">Detailed Test Protocols</h2>
+                <p class="text-gray-500 max-w-2xl mx-auto uppercase tracking-widest text-sm font-semibold">Our core JSS 55555 testing services</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Vibration -->
+                <div class="glass-card p-8 rounded-2xl relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-[#D4AF37]/5 rounded-bl-full group-hover:bg-[#D4AF37]/10 transition"></div>
+                    <span class="text-[#D4AF37] font-bold text-xl mb-4 block">01.</span>
+                    <h3 class="heading-font text-xl font-bold mb-4">Vibration Test</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                        Checks mechanical stability during shipping, handling, or operational use. Essential for vehicle-mounted electronics.
+                    </p>
+                    <i class="fas fa-wave-square absolute bottom-8 right-8 text-4xl opacity-10 group-hover:opacity-30 transition"></i>
+                </div>
+
+                <!-- Shock -->
+                <div class="glass-card p-8 rounded-2xl relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-[#D4AF37]/5 rounded-bl-full group-hover:bg-[#D4AF37]/10 transition"></div>
+                    <span class="text-[#D4AF37] font-bold text-xl mb-4 block">02.</span>
+                    <h3 class="heading-font text-xl font-bold mb-4">Shock & Bump</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                        Evaluates resistance against sudden impacts, ensuring product robustness in high-intensity combat or transport scenarios.
+                    </p>
+                    <i class="fas fa-bolt absolute bottom-8 right-8 text-4xl opacity-10 group-hover:opacity-30 transition"></i>
+                </div>
+
+                <!-- Composite -->
+                <div class="glass-card p-8 rounded-2xl relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-[#D4AF37]/5 rounded-bl-full group-hover:bg-[#D4AF37]/10 transition"></div>
+                    <span class="text-[#D4AF37] font-bold text-xl mb-4 block">03.</span>
+                    <h3 class="heading-font text-xl font-bold mb-4">Composite Stress</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                        Combines temperature cycling with humidity to simulate extreme operational stress for a complete product evaluation.
+                    </p>
+                    <i class="fas fa-microchip absolute bottom-8 right-8 text-4xl opacity-10 group-hover:opacity-30 transition"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- JSS vs MIL-STD Table -->
+    <section class="py-24 px-6 bg-[#0f1216]">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="heading-font text-3xl font-bold mb-12 text-center">JSS 55555 vs MIL-STD 810</h2>
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse glass-card rounded-xl">
+                    <thead>
+                        <tr class="bg-[#D4AF37]/10 text-[#D4AF37] uppercase text-xs tracking-widest font-bold">
+                            <th class="p-6">Feature</th>
+                            <th class="p-6 border-l border-white/10">JSS 55555 (Penta-Five)</th>
+                            <th class="p-6 border-l border-white/10">MIL-STD 810</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-sm">
+                        <tr class="border-t border-white/10">
+                            <td class="p-6 font-bold">Primary Focus</td>
+                            <td class="p-6 border-l border-white/10 text-gray-400">Mold resistance, environmental stress</td>
+                            <td class="p-6 border-l border-white/10 text-gray-400">Environmental & mechanical stress</td>
+                        </tr>
+                        <tr class="border-t border-white/10 bg-white/5">
+                            <td class="p-6 font-bold">Target Products</td>
+                            <td class="p-6 border-l border-white/10 text-gray-400">Electronics & electrical equipment</td>
+                            <td class="p-6 border-l border-white/10 text-gray-400">Military, aerospace, and electronics</td>
+                        </tr>
+                        <tr class="border-t border-white/10">
+                            <td class="p-6 font-bold">Global Acceptance</td>
+                            <td class="p-6 border-l border-white/10 text-gray-400">India & select international markets</td>
+                            <td class="p-6 border-l border-white/10 text-gray-400">Worldwide, highly recognized</td>
+                        </tr>
+                        <tr class="border-t border-white/10 bg-white/5">
+                            <td class="p-6 font-bold">Main Objective</td>
+                            <td class="p-6 border-l border-white/10 text-gray-400">Required for Indian defense market</td>
+                            <td class="p-6 border-l border-white/10 text-gray-400">Accepted in all global military contracts</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="mt-8 text-center text-sm text-gray-500 italic">
+                * Takeaway: JSS 55555 is essential for electronics targeting Indian defense, while aligning closely with international MIL-STD 810.
+            </p>
+        </div>
+    </section>
+
+    <!-- Process -->
+    <section class="py-24 px-6 bg-[#1a1f25]">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="heading-font text-3xl font-bold mb-16 text-center">How It Works</h2>
+            <div class="grid md:grid-cols-5 gap-8">
+                <div class="process-step text-center group">
+                    <div class="w-16 h-16 bg-[#D4AF37] rounded-full flex items-center justify-center text-black font-bold text-xl mx-auto mb-6 group-hover:scale-110 transition">1</div>
+                    <h4 class="font-bold mb-2">Contact</h4>
+                    <p class="text-xs text-gray-400">Submit product requirements via form.</p>
+                </div>
+                <div class="process-step text-center group">
+                    <div class="w-16 h-16 bg-white/10 border border-[#D4AF37]/50 rounded-full flex items-center justify-center text-[#D4AF37] font-bold text-xl mx-auto mb-6 group-hover:scale-110 transition">2</div>
+                    <h4 class="font-bold mb-2">Submission</h4>
+                    <p class="text-xs text-gray-400">Ship units to our certified lab.</p>
+                </div>
+                <div class="process-step text-center group">
+                    <div class="w-16 h-16 bg-white/10 border border-[#D4AF37]/50 rounded-full flex items-center justify-center text-[#D4AF37] font-bold text-xl mx-auto mb-6 group-hover:scale-110 transition">3</div>
+                    <h4 class="font-bold mb-2">Testing</h4>
+                    <p class="text-xs text-gray-400">Strict JSS 55555 protocols applied.</p>
+                </div>
+                <div class="process-step text-center group">
+                    <div class="w-16 h-16 bg-white/10 border border-[#D4AF37]/50 rounded-full flex items-center justify-center text-[#D4AF37] font-bold text-xl mx-auto mb-6 group-hover:scale-110 transition">4</div>
+                    <h4 class="font-bold mb-2">Reporting</h4>
+                    <p class="text-xs text-gray-400">Detailed compliance certificates.</p>
+                </div>
+                <div class="process-step text-center group">
+                    <div class="w-16 h-16 bg-white/10 border border-[#D4AF37]/50 rounded-full flex items-center justify-center text-[#D4AF37] font-bold text-xl mx-auto mb-6 group-hover:scale-110 transition">5</div>
+                    <h4 class="font-bold mb-2">Market</h4>
+                    <p class="text-xs text-gray-400">Product ready for defense deployment.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits / Why ITC India -->
+    <section id="benefits" class="py-24 px-6">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+            <div class="grid grid-cols-1 gap-6">
+                <div class="flex items-start space-x-6">
+                    <div class="w-12 h-12 flex-shrink-0 bg-[#D4AF37]/20 rounded flex items-center justify-center">
+                        <i class="fas fa-certificate text-[#D4AF37]"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg mb-1">Certified Lab Services</h4>
+                        <p class="text-sm text-gray-500">NABL accredited and experienced facility specializing in defense standards.</p>
+                    </div>
+                </div>
+                <div class="flex items-start space-x-6">
+                    <div class="w-12 h-12 flex-shrink-0 bg-[#D4AF37]/20 rounded flex items-center justify-center">
+                        <i class="fas fa-stopwatch text-[#D4AF37]"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg mb-1">Fast Turnaround</h4>
+                        <p class="text-sm text-gray-500">Accelerated testing cycles to ensure your time-to-market is minimized.</p>
+                    </div>
+                </div>
+                <div class="flex items-start space-x-6">
+                    <div class="w-12 h-12 flex-shrink-0 bg-[#D4AF37]/20 rounded flex items-center justify-center">
+                        <i class="fas fa-file-contract text-[#D4AF37]"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg mb-1">Actionable Insights</h4>
+                        <p class="text-sm text-gray-500">Beyond pass/fail; receive detailed analysis and expert recommendations.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="glass-card p-12 rounded-3xl border-[#D4AF37]/20">
+                <h2 class="heading-font text-3xl font-bold mb-6">Industries We Serve</h2>
+                <ul class="space-y-4">
+                    <li class="flex items-center space-x-3 text-gray-300">
+                        <i class="fas fa-check-circle text-[#D4AF37]"></i>
+                        <span>Defense Electronics Manufacturers</span>
+                    </li>
+                    <li class="flex items-center space-x-3 text-gray-300">
+                        <i class="fas fa-check-circle text-[#D4AF37]"></i>
+                        <span>Aerospace Equipment Providers</span>
+                    </li>
+                    <li class="flex items-center space-x-3 text-gray-300">
+                        <i class="fas fa-check-circle text-[#D4AF37]"></i>
+                        <span>Automotive & Industrial IoT</span>
+                    </li>
+                    <li class="flex items-center space-x-3 text-gray-300">
+                        <i class="fas fa-check-circle text-[#D4AF37]"></i>
+                        <span>Power & Communication Infrastructure</span>
+                    </li>
+                </ul>
+                <button class="w-full btn-primary mt-10 py-4 rounded font-bold" onclick="location.href='#contact'">Book Free Consultation</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-24 px-6 bg-[#0f1216]">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="heading-font text-center text-3xl mb-16">Client Success</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="glass-card p-8 rounded-xl italic text-gray-400">
+                    "ITC India helped us certify our electronics for military use quickly and efficiently. Their Penta-Five testing is top-notch!"
+                    <div class="mt-6 flex items-center space-x-4">
+                        <div class="w-10 h-10 bg-[#D4AF37] rounded-full"></div>
+                        <div>
+                            <p class="text-white font-bold not-italic">R&D Manager</p>
+                            <p class="text-xs uppercase tracking-widest">Defense Electronics Sector</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass-card p-8 rounded-xl italic text-gray-400">
+                    "Reliable, accurate, and fast. The testing service gave us the confidence needed to enter global markets without hesitation."
+                    <div class="mt-6 flex items-center space-x-4">
+                        <div class="w-10 h-10 bg-[#D4AF37] rounded-full"></div>
+                        <div>
+                            <p class="text-white font-bold not-italic">Product Development Head</p>
+                            <p class="text-xs uppercase tracking-widest">Industrial Tech Corp</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="py-24 px-6 bg-[#161b22]">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="heading-font text-center text-3xl mb-16">Frequently Asked Questions</h2>
+            <div class="space-y-4">
+                <div class="faq-item pb-4">
+                    <h4 class="font-bold text-[#D4AF37] mb-2">Q1: What is the duration of JSS 55555 testing?</h4>
+                    <p class="text-gray-400 text-sm">Testing typically ranges from 1-3 weeks, depending on the number of environmental cycles required.</p>
+                </div>
+                <div class="faq-item pb-4">
+                    <h4 class="font-bold text-[#D4AF37] mb-2">Q2: Can ITC India test prototypes or only production units?</h4>
+                    <p class="text-gray-400 text-sm">We provide both R&D prototype validation and final batch production certification.</p>
+                </div>
+                <div class="faq-item pb-4">
+                    <h4 class="font-bold text-[#D4AF37] mb-2">Q3: Do you provide detailed reports?</h4>
+                    <p class="text-gray-400 text-sm">Yes, every test cycle concludes with a comprehensive analytical report and compliance certification.</p>
+                </div>
+                <div class="faq-item pb-4">
+                    <h4 class="font-bold text-[#D4AF37] mb-2">Q4: Is JSS 55555 accepted globally?</h4>
+                    <p class="text-gray-400 text-sm">While primarily recognized in Indian defense markets, it closely aligns with MIL-STD 810 international standards.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 px-6 bg-[#0f1216] relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent"></div>
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+            <div>
+                <h2 class="heading-font text-4xl font-bold mb-6">Ready to Make Your Electronics <span class="text-[#D4AF37]">Military-Ready?</span></h2>
+                <p class="text-gray-400 mb-10 text-lg">Don’t risk product failure or regulatory rejection. Fill out the form now and get a free consultation and personalized quote.</p>
+                <div class="space-y-6">
+                    <div class="flex items-center space-x-4">
+                        <i class="fas fa-check text-[#D4AF37]"></i>
+                        <span class="font-semibold">ISO/IEC Compliant Lab</span>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <i class="fas fa-check text-[#D4AF37]"></i>
+                        <span class="font-semibold">Expert Engineering Team</span>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <i class="fas fa-check text-[#D4AF37]"></i>
+                        <span class="font-semibold">Accurate & Defensible Reports</span>
+                    </div>
+                </div>
+            </div>
+            <div class="glass-card p-8 rounded-2xl border-white/20">
+                <form id="contactForm" class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">Full Name</label>
+                        <input type="text" name="name" required class="w-full bg-white/5 border border-white/10 rounded px-4 py-3 focus:outline-none focus:border-[#D4AF37] text-white" placeholder="John Doe">
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">Email Address</label>
+                            <input type="email" name="email" required class="w-full bg-white/5 border border-white/10 rounded px-4 py-3 focus:outline-none focus:border-[#D4AF37] text-white" placeholder="john@company.com">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">Phone</label>
+                            <input type="tel" name="phone" required class="w-full bg-white/5 border border-white/10 rounded px-4 py-3 focus:outline-none focus:border-[#D4AF37] text-white" placeholder="+91 ...">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">Product Type / Requirement</label>
+                        <textarea name="message" required rows="4" class="w-full bg-white/5 border border-white/10 rounded px-4 py-3 focus:outline-none focus:border-[#D4AF37] text-white" placeholder="Describe your product and required tests..."></textarea>
+                    </div>
+                    <div id="formStatus" class="hidden text-sm p-3 rounded mb-2"></div>
+                    <button type="submit" id="submitBtn" class="w-full btn-primary py-4 rounded font-bold mt-4 shadow-lg shadow-[#D4AF37]/20 flex items-center justify-center">
+                        <span id="btnText">Request Free Quote Now</span>
+                        <i id="btnSpinner" class="fas fa-spinner fa-spin hidden ml-2"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 px-6 border-t border-white/10 bg-[#0f1216]">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-sm text-gray-600">
+            <div class="flex items-center mb-6 md:mb-0">
+                <a href="/">
+                    <img src="https://yourimageshare.com/ib/obzGyTxieR.png" alt="ITC India Logo" class="site-logo">
+                </a>
+            </div>
+            <div class="flex space-x-8 mb-6 md:mb-0">
+                <a href="https://www.itcindia.org/privacy-policy/" class="hover:text-[#D4AF37] transition">Privacy Policy</a>
+                <a href="https://www.itcindia.org/terms-conditions/" class="hover:text-[#D4AF37] transition">Terms of Service</a>
+                <a href="https://www.itcindia.org/accreditations-approval/" class="hover:text-[#D4AF37] transition">Accreditations</a>
+            </div>
+            <p>&copy; 2024 ITC India Labs. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Simple Fade In on Scroll
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100');
+                    entry.target.classList.remove('opacity-0');
+                    entry.target.classList.add('translate-y-0');
+                    entry.target.classList.remove('translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.glass-card').forEach(card => {
+            card.classList.add('opacity-0', 'translate-y-10', 'transition', 'duration-700');
+            observer.observe(card);
+        });
+
+        // Form Submission Logic
+        const contactForm = document.getElementById('contactForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const btnText = document.getElementById('btnText');
+        const btnSpinner = document.getElementById('btnSpinner');
+        const formStatus = document.getElementById('formStatus');
+
+        // REPLACE THIS URL WITH YOUR ACTUAL N8N WEBHOOK URL
+        const N8N_WEBHOOK_URL = 'https://damnart-ai-guladab.n8n-wsk.com/webhook/jss';
+
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            // Set Loading State
+            submitBtn.disabled = true;
+            btnText.textContent = 'Submitting...';
+            btnSpinner.classList.remove('hidden');
+            formStatus.classList.add('hidden');
+
+            const formData = new FormData(contactForm);
+            const data = Object.fromEntries(formData.entries());
+
+            try {
+                const response = await fetch(N8N_WEBHOOK_URL, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data),
+                });
+
+                if (response.ok) {
+                    // Success
+                    formStatus.textContent = 'Request submitted successfully! We will contact you shortly.';
+                    formStatus.classList.remove('hidden', 'bg-red-500/20', 'text-red-400');
+                    formStatus.classList.add('bg-green-500/20', 'text-green-400');
+                    contactForm.reset();
+                } else {
+                    throw new Error('Server responded with an error');
+                }
+            } catch (error) {
+                // Error
+                formStatus.textContent = 'Oops! Something went wrong. Please try again or call us directly.';
+                formStatus.classList.remove('hidden', 'bg-green-500/20', 'text-green-400');
+                formStatus.classList.add('bg-red-500/20', 'text-red-400');
+            } finally {
+                // Reset Loading State
+                submitBtn.disabled = false;
+                btnText.textContent = 'Request Free Quote Now';
+                btnSpinner.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html>

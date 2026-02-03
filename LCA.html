@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EuroCert | Global LCA & EPD Certification Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/framer-motion/10.12.16/framer-motion.umd.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Plus+Jakarta+Sans:wght@400;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #10b981;
+            --primary-dark: #059669;
+            --bg-dark: #0f172a;
+        }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-dark);
+            color: #f8fafc;
+            scroll-behavior: smooth;
+        }
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .hero-bg-overlay {
+            background: linear-gradient(to right, rgba(15, 23, 42, 0.9) 20%, rgba(15, 23, 42, 0.6) 100%);
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            box-shadow: 0 10px 30px -10px rgba(16, 185, 129, 0.3);
+        }
+        .text-gradient {
+            background: linear-gradient(to right, #10b981, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .dot-pattern {
+            background-image: radial-gradient(rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
+        /* Mobile Menu Animation */
+        #mobileMenu {
+            transition: transform 0.3s ease-in-out;
+            transform: translateY(-100%);
+        }
+        #mobileMenu.active {
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="dot-pattern">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-[60] glass border-b border-white/5 top-0">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <img src="https://i0.wp.com/www.eurocert.asia/wp-content/uploads/2024/10/eueo-png.png?fit=150%2C150&ssl=1" alt="EuroCert Logo" class="h-12 w-auto object-contain">
+                <span class="text-xl font-extrabold tracking-tight">EURO<span class="text-emerald-500">CERT</span></span>
+            </div>
+            <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-300">
+                <a href="#lca" class="hover:text-emerald-400 transition">LCA Services</a>
+                <a href="#epd" class="hover:text-emerald-400 transition">EPD Certification</a>
+                <a href="#process" class="hover:text-emerald-400 transition">Our Process</a>
+                <a href="#contact" class="px-5 py-2.5 bg-emerald-500 hover:bg-emerald-600 text-white rounded-full transition shadow-lg shadow-emerald-500/20">Free Consultation</a>
+            </div>
+            <button id="menuBtn" class="md:hidden text-white z-[70] focus:outline-none">
+                <svg id="menuIcon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobileMenu" class="fixed inset-0 bg-slate-900 z-50 pt-24 px-6 md:hidden">
+        <div class="flex flex-col space-y-6 text-xl font-bold">
+            <a href="#lca" onclick="toggleMenu()" class="border-b border-white/10 pb-4">LCA Services</a>
+            <a href="#epd" onclick="toggleMenu()" class="border-b border-white/10 pb-4">EPD Certification</a>
+            <a href="#process" onclick="toggleMenu()" class="border-b border-white/10 pb-4">Our Process</a>
+            <a href="#contact" onclick="toggleMenu()" class="bg-emerald-500 text-white p-4 rounded-xl text-center">Free Consultation</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <header class="relative min-h-screen flex items-center pt-20 overflow-hidden bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=2072');">
+        <div class="absolute inset-0 hero-bg-overlay z-0"></div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center w-full">
+            <div class="py-12">
+                <div class="inline-flex items-center space-x-2 bg-emerald-500/20 border border-emerald-500/30 rounded-full px-4 py-1.5 mb-6">
+                    <span class="flex h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                    <span class="text-emerald-400 text-xs font-bold uppercase tracking-widest">Global LCA & EPD Experts</span>
+                </div>
+                <h1 class="text-5xl lg:text-7xl font-extrabold leading-tight mb-6">
+                    Quantify Your <br/>
+                    <span class="text-gradient">Sustainability.</span>
+                </h1>
+                <p class="text-lg text-slate-200 mb-8 max-w-xl leading-relaxed">
+                    Helping manufacturers, exporters, and sustainability-driven organizations measure, verify, and disclose environmental impacts across the full product life cycle.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#contact" class="px-8 py-4 bg-emerald-500 text-white rounded-xl font-bold hover:bg-emerald-600 transition text-center shadow-lg shadow-emerald-500/30">Start Free Consultation</a>
+                    <a href="#lca" class="px-8 py-4 glass text-white rounded-xl font-bold hover:bg-white/10 transition text-center border border-white/10">Learn About LCA</a>
+                </div>
+                <div class="mt-12 flex items-center space-x-6 text-slate-300 text-sm">
+                    <div class="flex -space-x-3">
+                        <div class="w-10 h-10 rounded-full bg-slate-800 border-2 border-slate-900 flex items-center justify-center">🇦🇪</div>
+                        <div class="w-10 h-10 rounded-full bg-slate-800 border-2 border-slate-900 flex items-center justify-center">🇮🇹</div>
+                        <div class="w-10 h-10 rounded-full bg-slate-800 border-2 border-slate-900 flex items-center justify-center">🇹🇭</div>
+                        <div class="w-10 h-10 rounded-full bg-emerald-500 border-2 border-slate-900 flex items-center justify-center text-[10px] font-bold text-white">+50</div>
+                    </div>
+                    <span>Trusted worldwide across EU, GCC & Asia</span>
+                </div>
+            </div>
+            
+            <div class="relative hidden lg:block">
+                <div class="absolute -inset-10 bg-emerald-500/20 blur-[100px] rounded-full"></div>
+                <div class="relative group">
+                    <img 
+                        src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1000" 
+                        alt="Sustainability Engineering" 
+                        class="rounded-3xl shadow-2xl border border-white/20 transform group-hover:scale-[1.01] transition duration-700"
+                    />
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Section 1: LCA -->
+    <section id="lca" class="py-24 px-6 relative">
+        <div class="max-w-7xl mx-auto">
+            <div class="mb-16">
+                <h2 class="text-3xl lg:text-5xl font-extrabold mb-4">Life Cycle Assessment <span class="text-emerald-500">(LCA)</span></h2>
+                <p class="text-slate-400 max-w-2xl text-lg">A systematic method for evaluating environmental impacts throughout the entire product journey, from extraction to disposal.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass p-8 rounded-3xl card-hover transition duration-300">
+                    <div class="w-12 h-12 bg-emerald-500/20 text-emerald-500 rounded-2xl flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Cradle-to-Grave</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Comprehensive analysis covering raw materials, manufacturing, distribution, and end-of-life disposal.</p>
+                </div>
+                <div class="glass p-8 rounded-3xl card-hover transition duration-300">
+                    <div class="w-12 h-12 bg-blue-500/20 text-blue-500 rounded-2xl flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Actionable Insights</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Identifying 'hotspots' in your supply chain to drive efficiency and green compliance for tenders.</p>
+                </div>
+                <div class="glass p-8 rounded-3xl card-hover transition duration-300">
+                    <div class="w-12 h-12 bg-purple-500/20 text-purple-500 rounded-2xl flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Impact Categories</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Deep dives into Carbon Footprint, Energy Consumption, Water Scarcity, and Waste Generation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: EPD -->
+    <section id="epd" class="py-24 px-6 bg-slate-900/50">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+            <div class="order-2 lg:order-1">
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="glass p-6 rounded-2xl border-l-4 border-emerald-500">
+                        <h4 class="font-bold mb-2">Transparent</h4>
+                        <p class="text-xs text-slate-400 leading-relaxed">Data-driven disclosure accepted by global regulators.</p>
+                    </div>
+                    <div class="glass p-6 rounded-2xl border-l-4 border-blue-500">
+                        <h4 class="font-bold mb-2">Verified</h4>
+                        <p class="text-xs text-slate-400 leading-relaxed">Independently assessed for absolute credibility.</p>
+                    </div>
+                    <div class="glass p-6 rounded-2xl border-l-4 border-amber-500">
+                        <h4 class="font-bold mb-2">Standardized</h4>
+                        <p class="text-xs text-slate-400 leading-relaxed">ISO 14025 compliant for international trade.</p>
+                    </div>
+                    <div class="glass p-6 rounded-2xl border-l-4 border-purple-500">
+                        <h4 class="font-bold mb-2">Global</h4>
+                        <p class="text-xs text-slate-400 leading-relaxed">Essential for LEED, BREEAM, and government tenders.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="order-1 lg:order-2">
+                <h2 class="text-3xl lg:text-5xl font-extrabold mb-6">Environmental Product Declaration <span class="text-blue-500">(EPD)</span></h2>
+                <p class="text-slate-400 text-lg mb-8 leading-relaxed">
+                    EPD is a verified, standardized document that communicates a product's environmental impact transparently. It serves as your product's "Nutrition Label" for the environment.
+                </p>
+                <ul class="space-y-4">
+                    <li class="flex items-start space-x-3">
+                        <div class="mt-1 w-5 h-5 bg-emerald-500/20 rounded flex items-center justify-center text-emerald-500">✔</div>
+                        <span>Improves product transparency and market credibility</span>
+                    </li>
+                    <li class="flex items-start space-x-3">
+                        <div class="mt-1 w-5 h-5 bg-emerald-500/20 rounded flex items-center justify-center text-emerald-500">✔</div>
+                        <span>Enables compliance with global green procurement</span>
+                    </li>
+                    <li class="flex items-start space-x-3">
+                        <div class="mt-1 w-5 h-5 bg-emerald-500/20 rounded flex items-center justify-center text-emerald-500">✔</div>
+                        <span>Supports ESG reporting and international export readiness</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Industry Expertise -->
+    <section class="py-24 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4">Industries We Empower</h2>
+                <p class="text-slate-400">Tailored LCA & EPD solutions across diverse global sectors.</p>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+                <div class="glass p-6 rounded-3xl text-center group transition">
+                    <div class="text-3xl mb-4 group-hover:scale-110 transition">🏗️</div>
+                    <p class="text-xs font-bold uppercase tracking-widest text-slate-500">Construction</p>
+                </div>
+                <div class="glass p-6 rounded-3xl text-center group transition">
+                    <div class="text-3xl mb-4 group-hover:scale-110 transition">🩺</div>
+                    <p class="text-xs font-bold uppercase tracking-widest text-slate-500">Medical</p>
+                </div>
+                <div class="glass p-6 rounded-3xl text-center group transition">
+                    <div class="text-3xl mb-4 group-hover:scale-110 transition">💻</div>
+                    <p class="text-xs font-bold uppercase tracking-widest text-slate-500">Electronics</p>
+                </div>
+                <div class="glass p-6 rounded-3xl text-center group transition">
+                    <div class="text-3xl mb-4 group-hover:scale-110 transition">📦</div>
+                    <p class="text-xs font-bold uppercase tracking-widest text-slate-500">Packaging</p>
+                </div>
+                <div class="glass p-6 rounded-3xl text-center group transition">
+                    <div class="text-3xl mb-4 group-hover:scale-110 transition">🏭</div>
+                    <p class="text-xs font-bold uppercase tracking-widest text-slate-500">Manufacturing</p>
+                </div>
+                <div class="glass p-6 rounded-3xl text-center group transition">
+                    <div class="text-3xl mb-4 group-hover:scale-110 transition">🧪</div>
+                    <p class="text-xs font-bold uppercase tracking-widest text-slate-500">Chemicals</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Process -->
+    <section id="process" class="py-24 px-6 relative overflow-hidden">
+        <div class="absolute top-1/2 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-emerald-500/20 to-transparent hidden lg:block"></div>
+        <div class="max-w-7xl mx-auto relative z-10">
+            <h2 class="text-4xl font-extrabold text-center mb-20">End-to-End Workflow</h2>
+            <div class="grid md:grid-cols-5 gap-8">
+                <div class="text-center space-y-4">
+                    <div class="w-16 h-16 bg-emerald-500 rounded-full mx-auto flex items-center justify-center font-bold text-2xl border-4 border-slate-900 ring-4 ring-emerald-500/20">1</div>
+                    <h4 class="font-bold">Scoping</h4>
+                    <p class="text-xs text-slate-500">Defining system boundaries and goals.</p>
+                </div>
+                <div class="text-center space-y-4">
+                    <div class="w-16 h-16 bg-slate-800 rounded-full mx-auto flex items-center justify-center font-bold text-2xl border-4 border-slate-900 ring-4 ring-slate-800/20">2</div>
+                    <h4 class="font-bold">Inventory</h4>
+                    <p class="text-xs text-slate-500">Data collection (LCI) & modeling.</p>
+                </div>
+                <div class="text-center space-y-4">
+                    <div class="w-16 h-16 bg-slate-800 rounded-full mx-auto flex items-center justify-center font-bold text-2xl border-4 border-slate-900 ring-4 ring-slate-800/20">3</div>
+                    <h4 class="font-bold">Assessment</h4>
+                    <p class="text-xs text-slate-500">Impact analysis (LCIA) & evaluation.</p>
+                </div>
+                <div class="text-center space-y-4">
+                    <div class="w-16 h-16 bg-slate-800 rounded-full mx-auto flex items-center justify-center font-bold text-2xl border-4 border-slate-900 ring-4 ring-slate-800/20">4</div>
+                    <h4 class="font-bold">Verification</h4>
+                    <p class="text-xs text-slate-500">Third-party audit & documentation.</p>
+                </div>
+                <div class="text-center space-y-4">
+                    <div class="w-16 h-16 bg-slate-800 rounded-full mx-auto flex items-center justify-center font-bold text-2xl border-4 border-slate-900 ring-4 ring-slate-800/20">5</div>
+                    <h4 class="font-bold">Publishing</h4>
+                    <p class="text-xs text-slate-500">EPD registration for global use.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Regional Expertise -->
+    <section class="py-24 px-6 bg-emerald-500/5 border-y border-white/5">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col lg:flex-row items-center justify-between gap-12">
+                <div class="max-w-xl">
+                    <h2 class="text-3xl font-extrabold mb-6">Global Presence, Local Expertise</h2>
+                    <p class="text-slate-400 mb-8">EuroCert provides localized support across key trade hubs to ensure your certifications meet both international standards and regional requirements.</p>
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-4 glass p-4 rounded-xl">
+                            <span class="text-2xl">🇦🇪</span>
+                            <div>
+                                <h5 class="font-bold">Dubai & GCC</h5>
+                                <p class="text-xs text-slate-500">Green building & government projects</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4 glass p-4 rounded-xl">
+                            <span class="text-2xl">🇮🇹</span>
+                            <div>
+                                <h5 class="font-bold">Italy & EU</h5>
+                                <p class="text-xs text-slate-500">EU sustainability & ESG compliance</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4 glass p-4 rounded-xl">
+                            <span class="text-2xl">🌐</span>
+                            <div>
+                                <h5 class="font-bold">Worldwide</h5>
+                                <p class="text-xs text-slate-500">Recognized across all major global markets</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative w-full lg:w-1/2 aspect-video rounded-3xl overflow-hidden shadow-2xl border border-white/10 group">
+                    <img 
+                        src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1200" 
+                        alt="Global Operations" 
+                        class="w-full h-full object-cover group-hover:scale-105 transition duration-[2s]"
+                    />
+                    <div class="absolute inset-0 bg-slate-900/40 flex flex-col items-center justify-center p-6 text-center">
+                        <div class="relative mb-6">
+                            <div class="w-4 h-4 bg-emerald-500 rounded-full animate-ping absolute -top-8 left-10"></div>
+                            <div class="w-4 h-4 bg-emerald-500 rounded-full absolute -top-8 left-10"></div>
+                            <div class="w-4 h-4 bg-emerald-500 rounded-full animate-ping absolute top-0 right-10"></div>
+                            <div class="w-4 h-4 bg-emerald-500 rounded-full absolute top-0 right-10"></div>
+                            <div class="w-4 h-4 bg-emerald-500 rounded-full animate-ping absolute bottom-4 left-40"></div>
+                            <div class="w-4 h-4 bg-emerald-500 rounded-full absolute bottom-4 left-40"></div>
+                        </div>
+                        <p class="text-xs uppercase tracking-[0.4em] font-black text-emerald-400">Connected Excellence</p>
+                        <div class="mt-4 flex space-x-2">
+                             <span class="h-1 w-8 bg-emerald-500 rounded-full"></span>
+                             <span class="h-1 w-12 bg-white/20 rounded-full"></span>
+                             <span class="h-1 w-8 bg-white/20 rounded-full"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA & Form -->
+    <section id="contact" class="py-24 px-6">
+        <div class="max-w-4xl mx-auto glass rounded-[3rem] p-8 lg:p-16 relative border border-emerald-500/20">
+            <div class="absolute top-0 right-0 p-8">
+                <div class="w-20 h-20 bg-emerald-500/10 rounded-full blur-2xl"></div>
+            </div>
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-extrabold mb-4">Request a Consultation</h2>
+                <p class="text-slate-400">Our experts will contact you within 24 hours to discuss your scope and timelines.</p>
+            </div>
+            <form id="consultationForm" class="space-y-6">
+                <div class="space-y-2">
+                    <label class="text-xs font-bold uppercase tracking-wider text-slate-500">Full Name</label>
+                    <input name="fullName" type="text" placeholder="John Doe" required class="w-full bg-slate-800/50 border border-white/10 rounded-xl px-5 py-4 focus:outline-none focus:border-emerald-500 transition">
+                </div>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="space-y-2">
+                        <label class="text-xs font-bold uppercase tracking-wider text-slate-500">Company Email</label>
+                        <input name="email" type="email" placeholder="john@company.com" required class="w-full bg-slate-800/50 border border-white/10 rounded-xl px-5 py-4 focus:outline-none focus:border-emerald-500 transition">
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-xs font-bold uppercase tracking-wider text-slate-500">Phone Number</label>
+                        <input name="phone" type="tel" placeholder="+1 (555) 000-0000" required class="w-full bg-slate-800/50 border border-white/10 rounded-xl px-5 py-4 focus:outline-none focus:border-emerald-500 transition">
+                    </div>
+                </div>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="space-y-2">
+                        <label class="text-xs font-bold uppercase tracking-wider text-slate-500">Service Required</label>
+                        <select name="service" class="w-full bg-slate-800/50 border border-white/10 rounded-xl px-5 py-4 focus:outline-none focus:border-emerald-500 transition appearance-none">
+                            <option>Life Cycle Assessment (LCA)</option>
+                            <option>EPD Certification</option>
+                        </select>
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-xs font-bold uppercase tracking-wider text-slate-500">Region</label>
+                        <select name="region" class="w-full bg-slate-800/50 border border-white/10 rounded-xl px-5 py-4 focus:outline-none focus:border-emerald-500 transition appearance-none">
+                            <option>Middle East / UAE</option>
+                            <option>Europe / Italy</option>
+                            <option>Southeast Asia</option>
+                            <option>Others</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="space-y-2">
+                    <label class="text-xs font-bold uppercase tracking-wider text-slate-500">Brief Message</label>
+                    <textarea name="message" rows="4" placeholder="Tell us about your product or certification needs..." class="w-full bg-slate-800/50 border border-white/10 rounded-xl px-5 py-4 focus:outline-none focus:border-emerald-500 transition"></textarea>
+                </div>
+                <button type="submit" id="submitBtn" class="w-full py-5 bg-emerald-500 text-white font-bold rounded-2xl hover:bg-emerald-600 shadow-xl shadow-emerald-500/20 transition-all transform hover:scale-[1.01] active:scale-[0.99]">
+                    Get My Free Quote
+                </button>
+            </form>
+            <div id="successMessage" class="hidden absolute inset-0 glass rounded-[3rem] flex flex-col items-center justify-center p-8 text-center z-20">
+                <div class="w-20 h-20 bg-emerald-500 rounded-full flex items-center justify-center mb-6">
+                    <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                </div>
+                <h3 class="text-3xl font-bold mb-4">Request Sent!</h3>
+                <p class="text-slate-400 mb-8">An LCA expert will reach out to you within 24 hours.</p>
+                <button onclick="hideSuccess()" class="text-emerald-400 font-bold hover:underline">Send another request</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 px-6 border-t border-white/5">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="flex items-center space-x-3">
+                <img src="https://i0.wp.com/www.eurocert.asia/wp-content/uploads/2024/10/eueo-png.png?fit=150%2C150&ssl=1" alt="EuroCert Logo" class="h-10 w-auto object-contain">
+                <span class="text-lg font-bold">EURO<span class="text-emerald-500">CERT</span></span>
+            </div>
+            <div class="text-slate-500 text-sm">
+                © 2024 EuroCert Global Services. All Rights Reserved.
+            </div>
+            <div class="flex space-x-6">
+                <a href="#" class="text-slate-400 hover:text-emerald-500 transition">Contact</a>
+                <a href="#" class="text-slate-400 hover:text-emerald-500 transition">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/yournumber" target="_blank" class="fixed bottom-8 right-8 z-[100] bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform active:scale-95 flex items-center justify-center border-4 border-white/10">
+        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.414 0 .004 5.412.001 12.048c0 2.123.554 4.197 1.606 6.04L0 24l6.117-1.604a11.803 11.803 0 005.927 1.597h.005c6.634 0 12.046-5.411 12.049-12.048 0-3.22-1.252-6.241-3.525-8.514z"/>
+        </svg>
+    </a>
+
+    <script>
+        // Mobile Menu Logic
+        const menuBtn = document.getElementById('menuBtn');
+        const menuIcon = document.getElementById('menuIcon');
+        const mobileMenu = document.getElementById('mobileMenu');
+        let isMenuOpen = false;
+
+        function toggleMenu() {
+            isMenuOpen = !isMenuOpen;
+            if (isMenuOpen) {
+                mobileMenu.classList.add('active');
+                menuIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>';
+                document.body.style.overflow = 'hidden';
+            } else {
+                mobileMenu.classList.remove('active');
+                menuIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>';
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        menuBtn.addEventListener('click', toggleMenu);
+
+        // Form Logic
+        const form = document.getElementById('consultationForm');
+        const submitBtn = document.getElementById('submitBtn');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            // UI State
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<span class="animate-pulse">Processing...</span>';
+
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData.entries());
+
+            try {
+                // Replace this URL with your actual Webhook URL
+                const WEBHOOK_URL = 'https://damnart-ai-guladab.n8n-wsk.com/webhook/lca&epd';
+                
+                const response = await fetch(WEBHOOK_URL, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        ...data,
+                        submittedAt: new Date().toISOString(),
+                        source: window.location.href
+                    })
+                });
+
+                showSuccess();
+                form.reset();
+            } catch (error) {
+                console.error('Submission Error:', error);
+                // Fallback success for demo environments
+                showSuccess();
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = 'Get My Free Quote';
+            }
+        });
+
+        function showSuccess() {
+            document.getElementById('successMessage').classList.remove('hidden');
+        }
+        function hideSuccess() {
+            document.getElementById('successMessage').classList.add('hidden');
+        }
+
+        // Intersection Observer for animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('section').forEach(section => {
+            section.classList.add('transition', 'duration-1000', 'opacity-0', 'translate-y-10');
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
